@@ -19,3 +19,9 @@ sudo /etc/init.d/nginx start
 ```
 
 By default, NGINX puts a test HTML file in the web folder. This default web page is served when you browse to `http://localhost/`. Navigate there now to see the landing page
+
+If you want to remove the default landing page open
+```sh
+sudo nano /etc/nginx/sites-enabled/default
+```
+and comment out everything
