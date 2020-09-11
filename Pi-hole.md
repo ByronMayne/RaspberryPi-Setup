@@ -27,13 +27,19 @@ However there is a big warning saying how that will be overridden on update so w
 ```sh
 sudo nano 
 ```
-and write the following in the file and replace the `{PORT_NUMBER}` with the port you want it to run on
+and write the following in the file and replace the `8093` with the port you want it to run on
 ```
-server.port := {PORT_NUMBER} 
+server.port := 8093 
 ```
 > Make sure you use `:=` otherwise you well get an error about duplicated variables. `:=` says it's okay to override
 
 Then restart the server using 
 ```sh
 sudo /etc/init.d/lighttpd restart
+```
+
+You will also then have to open the port if you want to access the admin panel
+```sh
+sudo ufw allow 8093/tcp
+sudo ufw allow 8093/udp
 ```
